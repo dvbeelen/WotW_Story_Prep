@@ -21,21 +21,25 @@ class App extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.textObject.title = event.target[0].value
-    this.cutStringsFromInput(event.target[1].value)
+    this.cutStringsFromInput(event.target[1].value, 0)
     console.log(this.textObject)
   }
 
-  cutStringsFromInput(text){
-    let sentenceCount = 0
-    while (text.length >= 0){
-      let sentence = text.split(". ")[0]
-      text.replace(sentence, "")
-      this.textObject.text[sentenceCount] = sentence
-    }
+  cutStringsFromInput(text, sentenceCount){
+    console.log(text.length)
+    let sentence = text.split(". ")[0] + '.'
+    text.substring(sentence.length + 2)
+    let cutText = text.substring(sentence.length + 2)
+    // sentence = sentence + "."
+    this.textObject.text[sentenceCount] = sentence
+    if (cutText.length > 0) {
+      this.cutStringsFromInput(cutText, sentenceCount += 1)
+    }    
   }
+
   render() {
     return (
-      <div>
+      <div class="App">
         <h2>StoryPrep</h2>
         <form onSubmit={this.handleSubmit}>
           <table>

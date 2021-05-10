@@ -36,6 +36,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <h2>StoryPrep</h2>
         <form onSubmit={this.handleSubmit}>
           <table>
             <tbody>

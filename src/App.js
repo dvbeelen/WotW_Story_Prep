@@ -22,6 +22,7 @@ class App extends Component {
     event.preventDefault();
     this.textObject.title = event.target[0].value
     this.cutStringsFromInput(event.target[1].value, 0)
+    this.convertAndDownloadJSON()
     console.log(this.textObject)
   }
 
@@ -36,6 +37,24 @@ class App extends Component {
       this.cutStringsFromInput(cutText, sentenceCount += 1)
     }    
   }
+
+  convertAndDownloadJSON(){
+    let filename = "export.json";
+    let contentType = "application/json;charset=utf-8;";
+    if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+      var blob = new Blob([decodeURIComponent(encodeURI(JSON.stringify(this.textObject)))], { type: contentType });
+      navigator.msSaveOrOpenBlob(blob, filename);
+    } else {
+      var a = document.createElement('a');
+      a.download = filename;
+      a.href = 'data:' + contentType + ',' + encodeURIComponent(JSON.stringify(this.textObject));
+      a.target = '_blank';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  }
+
 
   render() {
     return (

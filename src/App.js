@@ -32,14 +32,14 @@ class App extends Component {
     text.substring(sentence.length)
     let cutText = text.substring(sentence.length + 2)
     // sentence = sentence + "."
-    this.textObject.text[sentenceCount] = sentence
+    this.textObject.text[sentenceCount] = sentence.trim()
     if (cutText.length > 0) {
       this.cutStringsFromInput(cutText, sentenceCount += 1)
     }    
   }
 
   convertAndDownloadJSON(){
-    let filename = "export.json";
+    let filename = `${this.textObject.title}.json`;
     let contentType = "application/json;charset=utf-8;";
     if (window.navigator && window.navigator.msSaveOrOpenBlob) {
       var blob = new Blob([decodeURIComponent(encodeURI(JSON.stringify(this.textObject)))], { type: contentType });

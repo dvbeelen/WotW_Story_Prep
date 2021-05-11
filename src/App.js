@@ -27,8 +27,8 @@ class App extends Component {
 
   cutStringsFromInput(text, sentenceCount){
     console.log(text.length)
-    let sentence = text.split(". ")[0] + '.'
-    text.substring(sentence.length + 2)
+    let sentence = text.split(".")[0]
+    text.substring(sentence.length)
     let cutText = text.substring(sentence.length + 2)
     // sentence = sentence + "."
     this.textObject.text[sentenceCount] = sentence
@@ -45,16 +45,16 @@ class App extends Component {
           <table>
             <tbody>
               <tr>
-                <td><label htmlFor="title">Text title: </label></td>
+                <td><label htmlFor="title">Put your title here: </label></td>
                 <td><input type="text" id="title"></input></td>
               </tr>
               <tr>
-                <td><label htmlFor="textInput">Enter value: </label></td>
+                <td><label htmlFor="textInput">And put your story here: </label></td>
                 <td><input id="textInput" type="textarea" name="textValue"/></td>
               </tr>
             </tbody>
           </table>
-          <input type="submit"/>
+          <input type="submit" value="Get your prepped story"></input>
         </form>
       </div>
     );

@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import StoryPrepForm from './StoryPrepForm'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StoryPrepForm />
   </React.StrictMode>,
   document.getElementById('root')
 );

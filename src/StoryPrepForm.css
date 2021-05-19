@@ -1,0 +1,23 @@
+body {
+  padding-top: 2%;
+}
+.heading {
+  text-align: center;
+}
+
+.form {
+  text-align: center;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 50%;
+  padding: 12px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

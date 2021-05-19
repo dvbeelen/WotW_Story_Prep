@@ -69,7 +69,7 @@ class App extends Component {
               </tr>
               <tr>
                 <td><label htmlFor="textInput">And put your story here: </label></td>
-                <td><input id="textInput" type="textarea" name="textValue"/></td>
+                <td><textarea id="textInput" rows="4" cols="50" name="textValue"/></td>
               </tr>
             </tbody>
           </table>

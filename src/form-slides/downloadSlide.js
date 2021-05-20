@@ -10,12 +10,11 @@ class DownloadSlide extends React.Component {render() {
         <label htmlFor="title"><b>Done and done!</b></label>
         <input 
           className="form-control"
-          id="author"
-          name="author"
-          type="text"
-          placeholder="Give credit to the author of your story (or to yourself)!"
-          value={this.props.author} 
-          onChange={this.props.handleChange}
+          id="download"
+          name="download"
+          type="submit"
+          placeholder="Download your prepped story!"
+          value="Download your prepped story!"
         />
       </div>
     )}

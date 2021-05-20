@@ -11,7 +11,8 @@ Hi! And thank you for having a look at this tool I made. It's made as a part of 
 
 <h3 align="center"> What is it and what does it do? </h3>
 Story Prep is a website / tool I made using React. It allows you to quickly turn texts into a JSON file. The text is divided up line by line, so you can access each line of text individually. Any and all text will work! <br>
-An example of what prepped text looks like can be found in the repository, in the example folder.
+An example of what prepped text looks like can be found in the repository, in the example folder. <br>
+https://github.com/dvbeelen/Story_Prep/blob/main/example/Moby%20Dick.json
 
  <br><br>
  

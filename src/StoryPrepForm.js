@@ -4,6 +4,7 @@ import TitleSlide from './form-slides/titleSlide'
 import AuthorSlide from './form-slides/authorSlide'
 import TextSlide from './form-slides/textSlide'
 import DownloadSlide from './form-slides/downloadSlide';
+import OpeningSlide from './form-slides/openingSlide';
 
 class StoryPrepForm extends React.Component {
     constructor(props) {
@@ -59,7 +60,7 @@ class StoryPrepForm extends React.Component {
     
     _next = () => {
       let currentStep = this.state.currentStep
-      currentStep = currentStep >= 3? 4: currentStep + 1
+      currentStep = currentStep >= 4? 5: currentStep + 1
       this.setState({
         currentStep: currentStep
       })
@@ -92,7 +93,7 @@ class StoryPrepForm extends React.Component {
   
   nextButton(){
     let currentStep = this.state.currentStep;
-    if(currentStep <4){
+    if(currentStep <5){
       return (
         <button 
           className="nextButton" 
@@ -116,6 +117,9 @@ class StoryPrepForm extends React.Component {
             {/* 
             render the form steps and pass required props in
             */}
+            <OpeningSlide
+                currentStep={this.state.currentStep} 
+            />
             <TitleSlide 
                 currentStep={this.state.currentStep} 
                 handleChange={this.handleChange}

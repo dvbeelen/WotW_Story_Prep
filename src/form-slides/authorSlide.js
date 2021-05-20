@@ -1,7 +1,7 @@
 import React from "react";
 
 class AuthorSlide extends React.Component {render() {
-    if (this.props.currentStep !== 2) { // Prop: The current step
+    if (this.props.currentStep !== 3) { // Prop: The current step
       return null
     }
 

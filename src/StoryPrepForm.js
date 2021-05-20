@@ -23,16 +23,12 @@ class StoryPrepForm extends React.Component {
       const {name, value} = event.target
       if (name === 'text'){
         this.cutStringsFromInput(value, 0) 
-        console.log(this.text)
       } else {
         this.textObject[name] = value 
       }  
-      console.log(name)
-      console.log(this.textObject)
     }
 
     cutStringsFromInput(text, sentenceCount){
-        console.log('splitting string')
         let sentence = text.split(".")[0]
         text.substring(sentence.length)
         let cutText = text.substring(sentence.length + 2)
@@ -41,7 +37,6 @@ class StoryPrepForm extends React.Component {
         if (cutText.length > 0) {
           this.cutStringsFromInput(cutText, sentenceCount += 1)
         }  
-        console.log(this.textObject)  
       }
      
     handleSubmit = event => {
@@ -86,7 +81,7 @@ class StoryPrepForm extends React.Component {
     if(currentStep !==1){
       return (
         <button 
-          className="btn btn-secondary" 
+          className="previousButton" 
           type="button" onClick={this._prev}>
         Previous
         </button>
@@ -100,7 +95,7 @@ class StoryPrepForm extends React.Component {
     if(currentStep <4){
       return (
         <button 
-          className="btn btn-primary float-right" 
+          className="nextButton" 
           type="button" onClick={this._next}>
             Next
         </button>        
@@ -117,7 +112,6 @@ class StoryPrepForm extends React.Component {
             <h1>Story Prep</h1>
         </div>
         <div className="form">
-            <p>Step {this.state.currentStep} </p>
             <form onSubmit={this.handleSubmit}>
             {/* 
             render the form steps and pass required props in
@@ -140,9 +134,12 @@ class StoryPrepForm extends React.Component {
                 currentStep={this.state.currentStep} 
                 handleChange={this.handleChange}
             />
-            {/* {this.previousButton()} */}
-            {this.nextButton()}
-    
+
+            <div className="navButtons">
+                {this.previousButton()}
+                {this.nextButton()}
+            </div>
+
             </form>
         </div> 
         </React.Fragment>

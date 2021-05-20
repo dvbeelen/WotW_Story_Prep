@@ -8,6 +8,7 @@ class DownloadSlide extends React.Component {render() {
     return(
       <div className="form-group">
         <label htmlFor="title"><b>Done and done!</b></label>
+        <p>Click the button below to download your prepped story! <br></br> This might take a little while (depending on the length of your story), so be patient!</p>
         <input 
           className="form-control"
           id="download"

@@ -13,6 +13,7 @@ class TextSlide extends React.Component {render() {
           id="text"
           name="text"
           type="text"
+          rows = "25"
           placeholder="Put your story here!"
           value={this.props.text} 
           onChange={this.props.handleChange}

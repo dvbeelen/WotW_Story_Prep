@@ -14,6 +14,8 @@ select,
 textarea {
   width: 50%;
   padding: 12px 20px;
+  margin-top: 1%;
+  margin-bottom: 1%;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -22,9 +24,30 @@ textarea {
   box-sizing: border-box;
 }
 
-input[type="submit"] {
+label {
+  font-size: 20pt;
+  margin-bottom: 2%;
+}
+
+input[type="submit"],
+.nextButton,
+.previousButton {
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2%;
+  background-color: #1e8cd7;
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  width: 15%;
+}
+
+.nextButton,
+.previousButton {
+  display: inline-block;
+  width: 5%;
+  margin-bottom: 2%;
+  margin: 1%;
 }

@@ -7,7 +7,7 @@ class AuthorSlide extends React.Component {render() {
 
     return(
       <div className="form-group">
-        <label htmlFor="title">Who wrote your story?</label>
+        <label htmlFor="title"><b>Who wrote your story?</b></label>
         <input 
           className="form-control"
           id="author"

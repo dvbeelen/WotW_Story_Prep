@@ -7,7 +7,7 @@ class TitleSlide extends React.Component {render() {
 
     return(
       <div className="form-group">
-        <label htmlFor="title">What's your story's title?</label>
+        <label htmlFor="title"><b>What's your story's title?</b></label>
         <input 
           className="form-control"
           id="title"

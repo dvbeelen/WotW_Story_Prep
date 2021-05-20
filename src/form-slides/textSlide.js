@@ -7,7 +7,7 @@ class TextSlide extends React.Component {render() {
 
     return(
       <div className="form-group">
-        <label htmlFor="title">Time to get the story prepared!</label>
+        <label htmlFor="title"><b>Time to get the story prepared!</b></label>
         <textarea 
           className="form-control"
           id="text"

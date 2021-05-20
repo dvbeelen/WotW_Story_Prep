@@ -3,6 +3,7 @@ import React from 'react'
 import TitleSlide from './form-slides/titleSlide'
 import AuthorSlide from './form-slides/authorSlide'
 import TextSlide from './form-slides/textSlide'
+import DownloadSlide from './form-slides/downloadSlide';
 
 class StoryPrepForm extends React.Component {
     constructor(props) {
@@ -22,6 +23,7 @@ class StoryPrepForm extends React.Component {
       const {name, value} = event.target
       if (name === 'text'){
         this.cutStringsFromInput(value, 0) 
+        console.log(this.text)
       } else {
         this.textObject[name] = value 
       }  
@@ -29,12 +31,8 @@ class StoryPrepForm extends React.Component {
       console.log(this.textObject)
     }
 
-    handleTextChange = event => {
-        const {name, value} = event.target
-        this.cutStringsFromInput(value, 0) 
-    }
-
     cutStringsFromInput(text, sentenceCount){
+        console.log('splitting string')
         let sentence = text.split(".")[0]
         text.substring(sentence.length)
         let cutText = text.substring(sentence.length + 2)
@@ -42,21 +40,17 @@ class StoryPrepForm extends React.Component {
         this.textObject.text[sentenceCount] = sentence.trim()
         if (cutText.length > 0) {
           this.cutStringsFromInput(cutText, sentenceCount += 1)
-        }    
+        }  
+        console.log(this.textObject)  
       }
      
     handleSubmit = event => {
       event.preventDefault()
-      const { email, username, password } = this.state
-      alert(`Your registration detail: \n 
-             Email: ${email} \n 
-             Username: ${username} \n
-             Password: ${password}`)
     }
     
     _next = () => {
       let currentStep = this.state.currentStep
-      currentStep = currentStep >= 2? 3: currentStep + 1
+      currentStep = currentStep >= 3? 4: currentStep + 1
       this.setState({
         currentStep: currentStep
       })
@@ -89,12 +83,12 @@ class StoryPrepForm extends React.Component {
   
   nextButton(){
     let currentStep = this.state.currentStep;
-    if(currentStep <3){
+    if(currentStep <4){
       return (
         <button 
           className="btn btn-primary float-right" 
           type="button" onClick={this._next}>
-        Next
+            Next
         </button>        
       )
     }
@@ -127,7 +121,10 @@ class StoryPrepForm extends React.Component {
             <TextSlide 
                 currentStep={this.state.currentStep} 
                 handleChange={this.handleChange}
-                password={this.state.password}
+            />
+            <DownloadSlide
+                currentStep={this.state.currentStep} 
+                handleChange={this.handleChange}
             />
             {this.previousButton()}
             {this.nextButton()}

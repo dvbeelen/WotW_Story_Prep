@@ -30,9 +30,9 @@ class StoryPrepForm extends React.Component {
     }
 
     cutStringsFromInput(text, sentenceCount){
-        let sentence = text.split(".")[0]
+        let sentence = text.split(/(?<=[.?!])/)[0]
         text.substring(sentence.length)
-        let cutText = text.substring(sentence.length + 2)
+        let cutText = text.substring(sentence.length)
         // sentence = sentence + "."
         this.textObject.text[sentenceCount] = sentence.trim()
         if (cutText.length > 0) {

@@ -6,9 +6,6 @@
 Writing On The Wall: Story Prep
 </h2>
 
-Hi! And thank you for having a look at this tool I made. It's made as a part of the Writing On The Wall Plug-in I made for Godot. <br>
-(link here once the plug-in repo is up!)
-
 <h3 align="center"> What is it and what does it do? </h3>
 Story Prep is a website / tool I made using React. It allows you to quickly turn texts into a JSON file. The text is divided up line by line, so you can access each line of text individually. Any and all text will work! <br>
 An example of what prepped text looks like can be found in the repository, in the example folder. <br>
